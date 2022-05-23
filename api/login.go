@@ -3,9 +3,9 @@ package api
 import (
 	"net/http"
 
-	"github.com/TCP404/OneTiny-cli/common"
-	"github.com/TCP404/OneTiny-cli/common/config"
-	"github.com/TCP404/OneTiny-cli/core/util"
+	"github.com/TCP404/OneTiny-core/config"
+	"github.com/TCP404/OneTiny-core/util"
+	"github.com/TCP404/eutil"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -24,8 +24,8 @@ func LoginPost(c *gin.Context) {
 	// 检查帐号密码
 	// 通过则生成session，跳转首页
 	// 不通过则返回登录页
-	if common.MD5(c.PostForm("username")) == viper.Get("account.custom.user") &&
-		common.MD5(c.PostForm("password")) == viper.Get("account.custom.pass") {
+	if eutil.MD5(c.PostForm("username")) == viper.Get("account.custom.user") &&
+		eutil.MD5(c.PostForm("password")) == viper.Get("account.custom.pass") {
 		session := sessions.Default(c)
 		session.Set("login", config.SessionVal)
 		session.Save()

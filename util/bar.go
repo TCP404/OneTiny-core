@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/TCP404/OneTiny-cli/common/config"
+	"github.com/TCP404/OneTiny-core/config"
 
 	pb "github.com/schollz/progressbar/v3"
 )

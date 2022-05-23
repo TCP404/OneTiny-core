@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"path"
 
-	"github.com/TCP404/OneTiny-cli/common/config"
+	"github.com/TCP404/OneTiny-core/config"
 
 	"github.com/gin-gonic/gin"
 )
